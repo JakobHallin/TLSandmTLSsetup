@@ -1,0 +1,13 @@
+services:
+    web-server:
+        build: ./image_www
+        image: tlswebserver
+        container_name: tlswebserverContainer
+        tty: true
+        volumes:
+            - ./volumes:/volumes
+        
+        ports:
+            - "80:80"
+            - "443:443"
+        restart: always
